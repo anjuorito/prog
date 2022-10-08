@@ -83,6 +83,7 @@
   const input=$('#image_file').get(0).files[0];
 if(input.size/1024>150){
   $("h1").html("File Data Over !!");
+  $("h1").css("color","red");
   return false;
 }
 
