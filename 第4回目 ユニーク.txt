@@ -1,0 +1,11 @@
+英数字のランダム文字列を生成する。
+長すぎると逆にわかりにくいと考え、六桁くらいがちょうどいいかなと思いました。
+
+$length = 6;  //6桁
+
+$chars = array_merge(range('a','z'), range('A','Z'),range('0','9'));
+shuffle($chars);
+
+for ($i=0; $i<$length;$i++){
+  echo $chars[$i];
+ }
