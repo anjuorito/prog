@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>infobox show[one/Multiple]</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>html,body{height:100%;}body{padding:0;margin:0;}h1{padding:0;margin:0;font-size:50%;}</style>
+</head>
+<body>
+
+
+<!-- MAP[START] -->
+<h1>Click on the pin. (Select 1 to 3 as the second argument of the function. The result changes.)</h1>
+<div id="myMap" style="width:100vw;height:100vh;"></div>
+<!-- MAP[END] -->
+
+
+<script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Aht_lmFWPsP11ZfKBSYKBXEV9yHiHSuO-bn_PK6Fdy0a-_KrBTDG8mOnvJq25BG3' async defer></script>
+<script src="../js/BmapQuery.js"></script>
+<script>
+    //init
+    function GetMap() {
+        //------------------------------------------------------------------------
+        //1. Instance
+        //------------------------------------------------------------------------
+        const map = new Bmap("#myMap");
+        //------------------------------------------------------------------------
+        //2. Display Map
+        //------------------------------------------------------------------------
+        map.startMap(35.3540636, 139.5311828, "load", 10);
+
+        //----------------------------------------------------
+        //3. Infobox
+        //   options = new Array();
+        //   options[index] = { lat, lon, width, height, title, pinColor, description, show };
+        //----------------------------------------------------
+        const options = [];
+    options[0]={
+        "lat":35.3540636,
+        "lon":139.5311828,
+        "title":"Ofuna",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": 'ofuna<br><img src="../img/ofuna.jpg" width="300">',
+        "show":false
+    };
+    options[1]={
+        "lat":35.3188764,
+        "lon":139.551976,
+        "title":"Kamakura",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": 'Komachi-Dori<br><img src="../img/kamakura.jpg" width="300">',
+        "show":false
+    };
+    options[2]={
+        "lat":35.2974702,
+        "lon":139.578421,
+        "title":"Zushi",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": 'Zushi-Mariina<br><img src="../img/zushi.jpg" width="300">',
+        "show":false
+    };
+
+    options[3]={
+        "lat":35.284119,
+        "lon":139.655899,
+        "title":"Yokosuka",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": 'yokosuka<br><img src="../img/yokosuka.jpg" width="300">',
+        "show":false
+    };
+    options[4]={
+        "lat":35.2571759,
+        "lon":139.6610156,
+        "title":"Kinugasa",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": 'kinugasa <br><img src="../img/kinugasa.jpg" width="300">',
+        "show":false
+    };
+    options[5]={
+        "lat":35.2335701,
+        "lon":135.7022683,
+        "title":"Kurihama",
+        "pinColor":"#ff0000",
+        "height":300,
+        "width":320,
+        "description": 'Kurihama<br><img src="../img/kurihama.jpg" width="300">',
+        "show":false
+    };
+    //----------------------------------------------------
+    //4. Switch infoboxs
+    //   infoboxLayers(options, true); //true=one, false=Multiple
+    //----------------------------------------------------
+    map.infoboxLayers(options,true);
+    }
+</script>
+</body>
+</html>
